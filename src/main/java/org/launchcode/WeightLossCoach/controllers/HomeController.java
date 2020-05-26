@@ -8,5 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping
-    public String index(){return "index";}
+    public String index(){return "main/index";}
+
+    @GetMapping("form")
+    public String newClientForm(){
+         return "contactform";
+    }
 }
+
+
