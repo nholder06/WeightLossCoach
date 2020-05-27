@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
+<title>New Client Form</title>
 
 <body class="container">
 <h1 th:replace="fragments :: header"></h1>
 <hr>
 <nav th:replace="fragments :: navigation"></nav>
+
+<h2>Wanting more information?</h2>
+
 <form method="post">
     <div class="form-group">
         <label>First Name
-        <input th:field="{user.firstName}" class="form-control">
-        </label>
+        <input type="text" name="firstName" class="form-control">
+        </label>Last Name
+        <input type="text" name="lastName" class="form-control">
+        <label>Email Adress</label>
+        <input type="text" name="email" class="form-control">
+        <input type="submit" value="Send">
     </div>
 </form>
 
