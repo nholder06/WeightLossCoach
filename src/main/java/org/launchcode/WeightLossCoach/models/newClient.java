@@ -3,6 +3,7 @@ package org.launchcode.WeightLossCoach.models;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.Objects;
 
 
 @Entity
@@ -28,6 +29,16 @@ public class newClient extends AbstractEntity{
 
     @NotBlank(message = "Required")
     private String briefDescription;
+
+
+    public newClient(String firstName, String lastName, String email, String briefDescription) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.briefDescription = briefDescription;
+    }
+
+    public newClient(){}
 
     public String getFirstName() {
         return firstName;
@@ -105,5 +116,22 @@ public class newClient extends AbstractEntity{
                 ", medicalHistory='" + medicalHistory + '\'' +
                 ", briefDescription='" + briefDescription + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        newClient newClient = (newClient) o;
+        return firstName.equals(newClient.firstName) &&
+                lastName.equals(newClient.lastName) &&
+                email.equals(newClient.email) &&
+                activityLevel.equals(newClient.activityLevel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), firstName, lastName, email, activityLevel);
     }
 }
