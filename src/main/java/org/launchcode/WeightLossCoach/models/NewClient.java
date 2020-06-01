@@ -1,20 +1,27 @@
 package org.launchcode.WeightLossCoach.models;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
-
 @Entity
-public class newClient extends AbstractEntity{
+@Document(collection = "WeightLossCoach")
+public class NewClient extends AbstractEntity{
 
+    @Field
     @NotBlank(message="Required.")
     private String firstName;
 
+    @Field
     @NotBlank(message = "Required.")
     private String lastName;
 
+    @Field
     @NotBlank(message = "Required.")
     @Email(message = "Invalid Email.")
     private String email;
@@ -31,14 +38,14 @@ public class newClient extends AbstractEntity{
     private String briefDescription;
 
 
-    public newClient(String firstName, String lastName, String email, String briefDescription) {
+    public NewClient(String firstName, String lastName, String email, String briefDescription) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.briefDescription = briefDescription;
     }
 
-    public newClient(){}
+    public NewClient(){}
 
     public String getFirstName() {
         return firstName;
@@ -123,7 +130,7 @@ public class newClient extends AbstractEntity{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        newClient newClient = (newClient) o;
+        NewClient newClient = (NewClient) o;
         return firstName.equals(newClient.firstName) &&
                 lastName.equals(newClient.lastName) &&
                 email.equals(newClient.email) &&

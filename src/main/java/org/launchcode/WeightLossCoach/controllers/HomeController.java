@@ -10,10 +10,6 @@ public class HomeController {
     @GetMapping
     public String index(){return "index";}
 
-//    @GetMapping("form")
-//    public String newClientForm(){
-//         return "main/contactform";
-//    }
 }
 
 
