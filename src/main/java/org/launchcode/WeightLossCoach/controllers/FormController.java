@@ -14,26 +14,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("new")
+@RequestMapping("home")
 public class FormController {
 
     @Autowired
     private NewClientRepository newClientRepository;
 
-    @GetMapping
+    @GetMapping("contactform")
     public String renderNewClientForm(Model model){
         model.addAttribute("title", "Start Your Journey Today");
         model.addAttribute(new NewClient());
-        return "contactform";
+        return "home/contactform";
     }
-    @PostMapping
+
+    @PostMapping("contactform")
     public String processNewClientForm(@ModelAttribute @Valid NewClient newClient, Errors errors, Model model){
         if(errors.hasErrors()){
             model.addAttribute("title", "Start Your Journey Today");
-            return "contactform";
+            return "home/contactform";
         }else{
             newClientRepository.save(newClient);
-            return "index";
+            return "redirct:";
         }
     }
 }

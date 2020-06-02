@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+<h1 th:replace="fragments :: header"></h1>
+<hr>
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post">
+    <div class="form-group">
+        <label>First Name
+        <input th:field="${newClient.firstName}" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Last Name
+            <input th:field="${newClient.lastName}" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Email
+            <input th:field="${newClient.email}" class="form-control">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Please give me a brief description of your weight loss goals
+            <input th:field="${newClient.briefDescription}" class="form-control">
+        </label>
+    </div>
+    <h4>If you are uncomfortable answering the following questions, these can be answered in person.</h4>
+    <div class="form-group">
+        <h6>Activity Level</h6>
+            <input type="radio" th:field="${newClient.activityLevel}" value="low" class="form-control">
+    <label>Low</label>
+        <input type="radio" th:field="${newClient.activityLevel}" value="moderate" class="form-control">
+        <label>Moderate</label>
+        <input type="radio" th:field="${newClient.activityLevel}" value="high" class="form-control">
+        <label>High</label>
+    </div>
+    <div class="form-group">
+        <label>Height
+            <input th:field="${newClient.height}" class="form-control">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Weight
+            <input th:field="${newClient.weight}" class="form-control">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Medical History
+            <input th:field="${newClient.medicalHistory}" class="form-control">
+        </label>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success">
+</form>
+
+</body>
+</html>    
