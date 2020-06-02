@@ -4,26 +4,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import javax.persistence.Entity;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
-@Entity
+
 @Document(collection = "WeightLossCoach")
 public class NewClient extends AbstractEntity{
 
     @Field
-    @NotBlank(message="Required.")
     private String firstName;
 
     @Field
-    @NotBlank(message = "Required.")
     private String lastName;
 
     @Field
-    @NotBlank(message = "Required.")
-    @Email(message = "Invalid Email.")
     private String email;
 
     private String activityLevel;
@@ -34,7 +27,6 @@ public class NewClient extends AbstractEntity{
 
     private String medicalHistory;
 
-    @NotBlank(message = "Required")
     private String briefDescription;
 
 
