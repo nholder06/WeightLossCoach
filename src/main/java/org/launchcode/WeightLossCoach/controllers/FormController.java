@@ -20,7 +20,7 @@ public class FormController {
     @Autowired
     private NewClientRepository newClientRepository;
 
-    @GetMapping("contactform")
+    @GetMapping("/contactform")
     public String renderNewClientForm(Model model){
         model.addAttribute("title", "Start Your Journey Today");
         model.addAttribute(new NewClient());
@@ -30,11 +30,11 @@ public class FormController {
     @PostMapping("contactform")
     public String processNewClientForm(@ModelAttribute @Valid NewClient newClient, Errors errors, Model model){
         if(errors.hasErrors()){
-            model.addAttribute("title", "Start Your Journey Today");
-            return "home/contactform";
+            model.addAttribute("title", "New Client Form");
+            return "redirect:";
         }else{
             newClientRepository.save(newClient);
-            return "redirct:";
+            return "home/contactform";
         }
     }
 }

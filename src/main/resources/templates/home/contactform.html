@@ -4,10 +4,11 @@
 
 <body class="container">
 <h1 th:replace="fragments :: header"></h1>
-<hr>
 <nav th:replace="fragments :: navigation"></nav>
+<hr>
+<h3>Begin your weightloss journey today </h3>
 
-<form method="post">
+<form method="post" th:action="@{home/contactform}">
     <div class="form-group">
         <label>First Name
         <input th:field="${newClient.firstName}" class="form-control">
@@ -31,14 +32,13 @@
     </div>
     <h4>If you are uncomfortable answering the following questions, these can be answered in person.</h4>
     <div class="form-group">
-        <h6>Activity Level</h6>
-            <input type="radio" th:field="${newClient.activityLevel}" value="low" class="form-control">
-    <label>Low</label>
-        <input type="radio" th:field="${newClient.activityLevel}" value="moderate" class="form-control">
-        <label>Moderate</label>
-        <input type="radio" th:field="${newClient.activityLevel}" value="high" class="form-control">
-        <label>High</label>
-    </div>
+        <label>Activity Level
+            <select class="form-control" name="activityLevel" th:field="${newClient.activityLevel}" >
+                <option value="low">Low</option>
+                <option value="moderate">Moderate</option>
+                <option value="high">High</option>
+            </select>
+        </label>
     <div class="form-group">
         <label>Height
             <input th:field="${newClient.height}" class="form-control">
