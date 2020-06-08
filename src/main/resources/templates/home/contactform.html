@@ -30,31 +30,7 @@
             <input th:field="${newClient.briefDescription}" class="form-control">
         </label>
     </div>
-    <h4>If you are uncomfortable answering the following questions, these can be answered in person.</h4>
-    <div class="form-group">
-        <label>Activity Level
-            <select class="form-control" name="activityLevel" th:field="${newClient.activityLevel}" >
-                <option value="low">Low</option>
-                <option value="moderate">Moderate</option>
-                <option value="high">High</option>
-            </select>
-        </label>
-    <div class="form-group">
-        <label>Height
-            <input th:field="${newClient.height}" class="form-control">
-        </label>
-    </div>
-    <div class="form-group">
-        <label>Weight
-            <input th:field="${newClient.weight}" class="form-control">
-        </label>
-    </div>
 
-    <div class="form-group">
-        <label>Medical History
-            <input th:field="${newClient.medicalHistory}" class="form-control">
-        </label>
-    </div>
     <input type="submit" value="Submit" class="btn btn-success">
 </form>
 
