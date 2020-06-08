@@ -18,14 +18,6 @@ public class NewClient extends AbstractEntity{
     @Field
     private String email;
 
-    private String activityLevel;
-
-    private String height;
-
-    private int weight;
-
-    private String medicalHistory;
-
     private String briefDescription;
 
 
@@ -62,38 +54,6 @@ public class NewClient extends AbstractEntity{
         this.email = email;
     }
 
-    public String getActivityLevel() {
-        return activityLevel;
-    }
-
-    public void setActivityLevel(String activityLevel) {
-        this.activityLevel = activityLevel;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public String getMedicalHistory() {
-        return medicalHistory;
-    }
-
-    public void setMedicalHistory(String medicalHistory) {
-        this.medicalHistory = medicalHistory;
-    }
-
     public String getBriefDescription() {
         return briefDescription;
     }
@@ -108,10 +68,6 @@ public class NewClient extends AbstractEntity{
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", activityLevel='" + activityLevel + '\'' +
-                ", height='" + height + '\'' +
-                ", weight=" + weight +
-                ", medicalHistory='" + medicalHistory + '\'' +
                 ", briefDescription='" + briefDescription + '\'' +
                 '}';
     }
@@ -124,12 +80,11 @@ public class NewClient extends AbstractEntity{
         NewClient newClient = (NewClient) o;
         return firstName.equals(newClient.firstName) &&
                 lastName.equals(newClient.lastName) &&
-                email.equals(newClient.email) &&
-                activityLevel.equals(newClient.activityLevel);
+                email.equals(newClient.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), firstName, lastName, email, activityLevel);
+        return Objects.hash(super.hashCode(), firstName, lastName, email);
     }
 }
