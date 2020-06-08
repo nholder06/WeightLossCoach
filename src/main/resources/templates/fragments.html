@@ -9,15 +9,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
+<div th:fragment="header">
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="d-flex flex-grow-1">
-<!--        <span class="w-100 d-lg-none d-block">&lt;!&ndash; hidden spacer to center brand on mobile &ndash;&gt;</span>-->
-<!--        <a class="navbar-brand d-none d-lg-inline-block" href="#">-->
-<!--            Navbar 6-->
-<!--        </a>-->
-        <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="@{images/LOGO}">
-            <img src="/images/LOGO" alt="logo">
+        <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+        <a class="navbar-brand d-none d-lg-inline-block"
+            href="@{/images/logo.jpg}">
+            <img src="/images/logo.jpg" alt="logo" height="75">
         </a>
+<!--        <a class="collapse navbar-collapse flex-grow-1 text-right" href="@{/images/logo.jpg}">-->
+<!--            <img src="/images/logo.jpg" alt="logo" height="75">-->
+<!--        </a>-->
         <div class="w-100 text-right">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -27,20 +29,23 @@
     <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
         <ul class="navbar-nav ml-auto flex-nowrap">
             <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item nav-active">Our Solution</a>
+                <a href="../" class="nav-link m-2 menu-item nav-active">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">How We Help</a>
+                <a href="../testimonials" class="nav-link m-2 menu-item">Testimonials</a>
             </li>
+<!--            #Would Maggie want a blog?-->
+<!--            <li class="nav-item">-->
+<!--                <a href="#" class="nav-link m-2 menu-item">Blog</a>-->
+<!--            </li>-->
             <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link m-2 menu-item">Contact</a>
+                <a href="../contactform" class="nav-link m-2 menu-item">Contact</a>
             </li>
         </ul>
     </div>
+    <hr>
 </nav>
-
+    <hr>
+</div>
 
 </html>    
