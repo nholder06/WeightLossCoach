@@ -1,12 +1,16 @@
 package org.launchcode.WeightLossCoach.models;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Objects;
 
 @Document(collection = "TestimonialClients")
-public class TestimonialClient extends AbstractEntity{
+public class TestimonialClient{
+
+    @Id
+    private String id;
 
     @Field
     private String name;
