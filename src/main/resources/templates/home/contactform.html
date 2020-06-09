@@ -19,13 +19,13 @@
     </div>
     <div class="form-group">
         <label>Email
-            <input th:field="${newClient.email}" class="form-control">
+            <input th:field="${newClient.email}" class="form-control" type="email">
         </label>
     </div>
 
     <div class="form-group">
         <label>Please give me a brief description of your weight loss goals
-            <input th:field="${newClient.briefDescription}" class="form-control">
+            <textarea th:field="${newClient.briefDescription}" class="form-control"></textarea>
         </label>
     </div>
 

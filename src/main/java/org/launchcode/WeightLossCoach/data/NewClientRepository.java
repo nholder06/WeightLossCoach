@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface NewClientRepository extends MongoRepository<NewClient, Integer> {
+public interface NewClientRepository extends MongoRepository<NewClient,String> {
 }

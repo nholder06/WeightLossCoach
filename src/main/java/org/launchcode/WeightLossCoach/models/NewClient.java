@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.util.Objects;
 
 
-@Document(collection = "WeightLossCoach")
+@Document(collection = "NewClient")
 public class NewClient extends AbstractEntity{
 
     @Field
