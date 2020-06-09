@@ -45,5 +45,11 @@ public class TestimonialsController {
         model.addAttribute("title", "Katie Moore");
         return "testimonials/katieMoore";
     }
+
+    @GetMapping("testimonials/pattySenft")
+    public String pSenftView(Model model){
+        model.addAttribute("title", "Patty Senft");
+        return "testimonials/pattySenft";
+    }
 }
 
