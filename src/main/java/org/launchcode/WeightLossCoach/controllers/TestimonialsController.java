@@ -1,7 +1,5 @@
 package org.launchcode.WeightLossCoach.controllers;
 
-
-import org.launchcode.WeightLossCoach.models.TestimonialClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

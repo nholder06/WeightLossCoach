@@ -1,12 +1,17 @@
 package org.launchcode.WeightLossCoach.models;
 
 import org.bson.types.Binary;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Objects;
 
 @Document(collection = "photos")
-public class Photo extends AbstractEntity{
+public class Photo{
+
+
+    @Id
+    private int id;
 
     private String name;
 
@@ -16,6 +21,14 @@ public class Photo extends AbstractEntity{
 
         this.name = name;
         this.image = image;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

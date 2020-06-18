@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<div lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
-<body class="container">
 
 <nav th:replace="fragments :: header"></nav>
 
-<form method="post">
+<form method="post" name=”contact_form”>
+    <div class="container center_div" align="left">
     <div class="form-group">
-        <label>First Name
+        <label class="col-sm-2 col-form-label">First Name
         <input  th:field="${newClient.firstName}" class="form-control">
         </label>
         <p class="error" th:errors="${newClient.firstName}"></p>
     </div>
     <div class="form-group">
-        <label>Last Name
+        <label class="col-sm-2 col-form-label">Last Name
             <input th:field="${newClient.lastName}" class="form-control">
         </label>
         <p class="error" th:errors="${newClient.lastName}"></p>
     </div>
     <div class="form-group">
-        <label>Email
+        <label class="col-sm-2 col-form-label">Email
             <input th:field="${newClient.email}" class="form-control">
         </label>
         <p class="error" th:errors="${newClient.email}"></p>
     </div>
-
-    <div class="form-group">
-        <label>Please give me a brief description of your weight loss goals
-            <textarea th:field="${newClient.briefDescription}" class="form-control"></textarea>
+    <div class="md-form">
+        <label class="col-sm-2 col-form-label">Please give me a brief description of your weight loss goals
+            <textarea th:field="${newClient.briefDescription}" class="md-textarea form-control" rows="5" columns="20"></textarea>
         </label>
         <p class="error" th:errors="${newClient.briefDescription}"></p>
     </div>
-
-    <input type="submit" value="Submit" class="btn btn-success">
+    <div class="col-sm-2 col-form-label">
+    <input type="submit" value="Submit" class="btn btn-success" name="submit">
+    </div>
+    </div>
 </form>
-
 </body>
 </html>    
