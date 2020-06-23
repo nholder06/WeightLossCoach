@@ -1,33 +1,26 @@
 package org.launchcode.WeightLossCoach.models;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
+@Entity
+public class NewClient extends AbstractEntity{
 
-@Document(collection = "newClient")
-public class NewClient{
-
-
-    @Id
-    private ObjectId _id;
-
-    @NotEmpty
+    @NotBlank
     private String firstName;
 
-    @NotEmpty
+    @NotBlank
     private String lastName;
 
-    @Indexed(unique = true)
-    @NotEmpty
-    @Email
+    @NotBlank
+    @Email(message = "Please enter a valid email address.")
     private String email;
 
-    @NotEmpty
+    @NotBlank
+    @Size(max=500)
     private String briefDescription;
 
 
@@ -39,10 +32,6 @@ public class NewClient{
 
     public NewClient(){}
 
-
-    public ObjectId get_id() {
-        return _id;
-    }
 
     public String getFirstName() {
         return firstName;

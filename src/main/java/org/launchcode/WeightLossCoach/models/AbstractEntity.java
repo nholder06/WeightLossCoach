@@ -1,12 +1,15 @@
 package org.launchcode.WeightLossCoach.models;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-
+@MappedSuperclass
 public abstract class AbstractEntity {
 
     @Id
+    @GeneratedValue
     private int id;
 
 

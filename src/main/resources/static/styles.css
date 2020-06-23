@@ -2,8 +2,9 @@
 color: 6F359E;
 height: 5px;
 }
-.error{
+.errors{
 color: red;
+font-style: italic;
 }
 
 

@@ -1,38 +1,44 @@
 <!DOCTYPE html>
-<div lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
 <nav th:replace="fragments :: header"></nav>
 
-<form method="post" name=”contact_form”>
+<form method="post" name="contactform">
     <div class="container center_div" align="left">
+
     <div class="form-group">
-        <label class="col-sm-2 col-form-label">First Name
-        <input  th:field="${newClient.firstName}" class="form-control">
+        <label>First Name
+        <input th:field="${newClient.firstName}" class="form-control">
         </label>
-        <p class="error" th:errors="${newClient.firstName}"></p>
+        <p class="errors" th:errors="${newClient.firstName}"></p>
     </div>
+
     <div class="form-group">
-        <label class="col-sm-2 col-form-label">Last Name
+        <label>Last Name
             <input th:field="${newClient.lastName}" class="form-control">
         </label>
-        <p class="error" th:errors="${newClient.lastName}"></p>
+        <p class="errors" th:errors="${newClient.lastName}"></p>
     </div>
+
     <div class="form-group">
-        <label class="col-sm-2 col-form-label">Email
+        <label>Email
             <input th:field="${newClient.email}" class="form-control">
         </label>
-        <p class="error" th:errors="${newClient.email}"></p>
+        <p class="errors" th:errors="${newClient.email}"></p>
     </div>
+
     <div class="md-form">
-        <label class="col-sm-2 col-form-label">Please give me a brief description of your weight loss goals
+        <label>Please give me a brief description of your weight loss goals
             <textarea th:field="${newClient.briefDescription}" class="md-textarea form-control" rows="5" columns="20"></textarea>
         </label>
-        <p class="error" th:errors="${newClient.briefDescription}"></p>
+        <p class="errors" th:errors="${newClient.briefDescription}"></p>
     </div>
-    <div class="col-sm-2 col-form-label">
+
+    <div>
     <input type="submit" value="Submit" class="btn btn-success" name="submit">
     </div>
+
     </div>
 </form>
 </body>
