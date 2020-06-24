@@ -20,7 +20,7 @@ public class NewClient extends AbstractEntity{
     private String email;
 
     @NotBlank
-    @Size(max=500)
+    @Size(max=500, message = "Description too long.")
     private String briefDescription;
 
 

@@ -26,14 +26,12 @@ public class FormController {
 
     @PostMapping
     public String processNewClientForm(@ModelAttribute @Valid NewClient newClient,
-                                       Errors errors, Model model){
-        if(errors.hasErrors()){
+                                       Errors errors, Model model) {
+        if(errors.hasErrors()) {
             model.addAttribute("title", "New Client Form");
-            System.out.println("oh no!");
             return "home/contact";
         }else{
             newClientRepository.save(newClient);
-            return "home/success";
-        }
+        }return "home/success";
     }
 }
