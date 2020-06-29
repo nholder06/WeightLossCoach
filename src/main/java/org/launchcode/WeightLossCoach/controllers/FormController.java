@@ -2,6 +2,7 @@ package org.launchcode.WeightLossCoach.controllers;
 
 import org.launchcode.WeightLossCoach.data.NewClientRepository;
 import org.launchcode.WeightLossCoach.models.NewClient;
+import org.launchcode.WeightLossCoach.models.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,9 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("contact")
 public class FormController {
+
+    @Autowired
+    private NotificationService notificationService;
 
     @Autowired
     private NewClientRepository newClientRepository;
@@ -32,6 +36,7 @@ public class FormController {
             return "home/contact";
         }else{
             newClientRepository.save(newClient);
+            notificationService.SendNotification(newClient);
         }return "home/success";
     }
 }
