@@ -1,3 +1,16 @@
+#testimonials{
+font-style: italic;
+font-family: PURITAN;
+}
+.form{
+font-family: PURITAN;
+font-size: 18px;
+}
+.lead{
+margin: 20px;
+font-family: PURITAN;
+font-size: 20px;
+}
 .style{
 color: 6F359E;
 height: 5px;
@@ -5,6 +18,20 @@ height: 5px;
 .errors{
 color: red;
 font-style: italic;
+font-family: PURITAN;
+font-size: 15px;
 }
-
-
+.float-center{
+margin: 10px 15px 10px 15px;
+height: 530px;
+width: 530px;
+}
+.float-right{
+margin: 10px 15px 10px 15px;
+height: 530px;
+width: 530px;
+}
+h2{
+font-family: PURITAN;
+font-style: italic;
+}

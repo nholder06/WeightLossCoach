@@ -7,28 +7,28 @@
 <form method="post" name="contactform">
     <div class="container center_div" align="left">
 
-    <div class="form-group">
+    <div class="form-group form">
         <label>First Name
         <input th:field="${newClient.firstName}" class="form-control">
         </label>
         <p class="errors" th:errors="${newClient.firstName}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group form">
         <label>Last Name
             <input th:field="${newClient.lastName}" class="form-control">
         </label>
         <p class="errors" th:errors="${newClient.lastName}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="form-group form">
         <label>Email
-            <input th:field="${newClient.email}" class="form-control">
+            <input type="email" th:field="${newClient.email}" class="form-control">
         </label>
         <p class="errors" th:errors="${newClient.email}"></p>
     </div>
 
-    <div class="md-form">
+    <div class="md-form form">
         <label>Please give me a brief description of your weight loss goals
             <textarea th:field="${newClient.briefDescription}" class="md-textarea form-control" rows="5" columns="20"></textarea>
         </label>

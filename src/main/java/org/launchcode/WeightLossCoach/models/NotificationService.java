@@ -19,7 +19,7 @@ public class NotificationService {
 
     public void SendNotification(NewClient newClient) throws MailException {
         SimpleMailMessage mail = new SimpleMailMessage();
-        mail.setTo(newClient.getEmail());
+        mail.setTo("nholder06@gmail.com");
         mail.setFrom("nholder06@gmail.com");
         mail.setSubject("Potential Client requesting more information");
         mail.setText("Name: " + newClient.getFirstName() + " " + newClient.getLastName() +
